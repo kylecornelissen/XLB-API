@@ -32,17 +32,20 @@ XLB is a simple API allowing consumers to get users and create them.
 
 ### Register User [POST]
 
-You may create a user using this action. It takes a username and password.
+You may find a user using this action. It takes a username and password.
 
 + Request (application/json)
 
-        data%5Busers%5D%5Bid%5D=qq&data%5Busers%5D%5Bname%5Dqq&data%5Busers%5D%5Busername%5Dqq&data%5Busers%5D%5Bpassword%5D=0
+        {
+            "username": "dev1",
+            "password": "admin"
+        }
 
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /users
+            Location: /users/1
 
     + Body
 
@@ -53,3 +56,7 @@ You may create a user using this action. It takes a username and password.
                     "team": []
                 }
             }
+## Question [/users/{id}]
+
++ Parameters
+    + id (number) - ID of the user in the form of an integer
