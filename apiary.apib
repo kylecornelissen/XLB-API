@@ -38,7 +38,9 @@ You may create a user using this action. It takes a username and password.
 
         {
             "user": {
-                "username": "dev1",
+                "id": "3",
+                "name": "Devin Devinson",
+                "username": "dev3",
                 "password": "admin"
             }
         }
@@ -47,13 +49,14 @@ You may create a user using this action. It takes a username and password.
 
     + Headers
 
-            Location: /user
+            Location: /createuser
 
     + Body
 
             {
                 "user": {
-                    "id": 1
-                    "name": "Devee"
+                    "id": 1,
+                    "name": "Devee",
+                    "team": []
                 }
             }
