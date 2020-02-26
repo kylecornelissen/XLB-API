@@ -1,0 +1,59 @@
+FORMAT: 1A
+HOST: https://xlb-user-data.apiblueprint.org/
+
+# XLBUserBase
+
+XLB is a simple API allowing consumers to view polls and vote in them.
+
+## Users Collection [/users]
+
+### List All Users [GET]
+
++ Response 200 (application/json)
+
+        {
+            "users": [ 
+                {
+                        "id": "1",
+                        "name": "Devee",
+                        "username": "dev1",
+                        "password": "admin",
+                        "team": []
+                }, 
+                {
+                        "id": "2",
+                        "name": "Dev Devv",
+                        "username": "tooLegitToForfeit",
+                        "password": "admin",
+                        "team": []
+                }
+            ]
+        }
+
+### Register User [POST]
+
+You may create a user using this action. It takes a username and password.
+
++ Request (application/json)
+
+        {
+            "user": {
+                "username": "corndogg",
+                "password": "admin"
+            }
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /user
+
+    + Body
+
+            {
+                "user": {
+                    "id": 1
+                    "name": "Devee"
+                }
+            }
